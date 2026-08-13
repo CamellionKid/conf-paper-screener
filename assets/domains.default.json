@@ -1,0 +1,22 @@
+{
+  "name": "感知 / 定位 / 规控 (机器人会议默认)",
+  "note": "patterns 是正则片段（对 session/title 小写后做 re.search）。规则按数组顺序优先级匹配。修改后请在运行时向用户回显确认。",
+  "categories": { "定位": "定位", "感知": "感知", "规控": "规控" },
+  "session_rules": [
+    { "cat": "定位", "patterns": ["navigation"], "exclude": ["telerobotics"] },
+    { "cat": "规控", "patterns": ["planning"], "include": ["vision"] },
+    { "cat": "感知", "patterns": ["perception", "computer vision", "object detection", "segmentation", "categorization", "recognition", "visual tracking", "visual learning", "visual servoing", "rgb-d", "range sensing", "robot audition", "human detection", "tactile sensing", "semantic scene understanding", "visual perception", "visual odometry", "vision", "audition"] },
+    { "cat": "FUSION", "patterns": ["sensor fusion"], "exclude": ["slam"] },
+    { "cat": "定位", "patterns": ["localization", "slam", "mapping", "visual-inertial"] },
+    { "cat": "规控", "patterns": ["control", "planning", "collision avoidance", "optimal"] }
+  ],
+  "title_rules": [
+    { "cat": "定位", "patterns": ["localiz\\w*", "\\bslam\\b", "\\bodometry\\b", "loop\\s*closure", "place\\s*recognition", "relocaliz\\w*", "state\\s*estimation", "visual\\s*-?\\s*inertial", "inertial\\s*navigation", "\\bgnss\\b", "\\bmapping\\b", "map\\s*construction", "\\bregistration\\b", "\\bnavigation\\b", "\\bcalibration\\b", "extrinsic\\s*calibr\\w*"] },
+    { "cat": "规控", "patterns": ["motion\\s*plann\\w*", "path\\s*plann\\w*", "trajectory\\s*plann\\w*", "trajectory\\s*optimiz\\w*", "trajectory\\s*tracking", "path\\s*tracking", "tracking\\s*control", "model\\s*predictive", "\\bmpc\\b", "mppi", "optimal\\s*control", "collision\\s*avoid\\w*", "task\\s*plann\\w*", "whole\\s*-?\\s*body\\s*plann\\w*", "impedance\\s*control", "admittance\\s*control", "force\\s*control", "control\\s*barrier", "\\bcbf\\b", "adaptive\\s*control", "sliding\\s*mode", "\\bbackstepping\\b", "\\bfeedback\\b", "\\bcontroller\\b", "\\bscheduling\\b", "\\bplann\\w*", "\\bcontrol\\b", "\\bstabilization\\b", "\\bstabilisation\\b"] },
+    { "cat": "感知", "patterns": ["object\\s*detection", "instance\\s*segmentation", "semantic\\s*segmentation", "panoptic", "scene\\s*understanding", "depth\\s*estimation", "depth\\s*completion", "depth\\s*prediction", "\\bperception\\b", "visual\\s*tracking", "object\\s*tracking", "target\\s*tracking", "multi\\s*-?\\s*object\\s*tracking", "pedestrian\\s*tracking", "point\\s*cloud", "human\\s*detection", "pedestrian\\s*detection", "3d\\s*detection", "3\\s*d\\s*detection", "\\bdetection\\b", "\\bsegmentation\\b", "\\brecognition\\b", "\\bclassification\\b", "\\btracking\\b"] }
+  ],
+  "fusion_split": {
+    "loc_patterns": ["localization", "slam", "odometry", "pose", "state estimat", "map", "registration", "calibration", "gnss", "imu", "wheel", "inertial", "alignment", "motion estimat"],
+    "default": "感知"
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Conference Paper Screener"
+  short_description: "Filter conference papers by domain into Feishu sheets"
+  default_prompt: "Use $conf-paper-screener to filter IROS 2025 papers by 感知/定位/规控 into a Feishu spreadsheet"
